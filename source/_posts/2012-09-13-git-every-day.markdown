@@ -24,7 +24,7 @@ remotes は origin のみ。
 foo というフィーチャーブランチから bar トピックブランチを作りたいとき。
 
     % git fetch
-    % git checkout foo/bar -b origin/foo
+    % git checkout origin/foo -b foo/bar
 
 ぼくは手元に remote の写しをおいておかない。つねに origin/foo のように remotes refspec から参照している。
 
