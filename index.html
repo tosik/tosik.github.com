@@ -9,8 +9,15 @@
   <meta name="author" content="Toshiyuki Hirooka">
 
   
-  <meta name="description" content="git で普段使ってる自分の操作を紹介。 前提 remotes は origin のみ。 いつでも最新にしておきたい fetch % git fetch これで origin の全部を取ってきてる。
-これをわかってない人がびっくりするくらい多い。 トピックブランチづくり foo &hellip;">
+  <meta name="description" content="「Ruby と似た感じにかけるからいいよ」
+はじめはそういう謳い文句を聞いて使い始めた CoffeeScript。 1
+2
+3
+4
+5
+6
+7
+class Hope doSomething: () -&gt; @eat @getWonderful() getWonderful: () -&gt &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +90,107 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/09/13/why-i-do-not-like-coffeescript/">CofeeScript 書きたくない</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-13T03:50:00+09:00" pubdate data-updated="true">2012-09-13 03:50</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>「Ruby と似た感じにかけるからいいよ」
+はじめはそういう謳い文句を聞いて使い始めた CoffeeScript。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="k">class</span> <span class="nx">Hope</span>
+</span><span class='line'>  <span class="nv">doSomething: </span><span class="nf">() -&gt;</span>
+</span><span class='line'>    <span class="nx">@eat</span> <span class="nx">@getWonderful</span><span class="p">()</span>
+</span><span class='line'>  <span class="nv">getWonderful: </span><span class="nf">() -&gt;</span>
+</span><span class='line'>    <span class="s">&quot;coffee and donuts&quot;</span>
+</span><span class='line'>  <span class="nv">eat: </span><span class="nf">(thing) -&gt;</span>
+</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="nx">thing</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Hope</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">do_something</span>
+</span><span class='line'>    <span class="n">eat</span> <span class="n">wonderful</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">wonderful</span>
+</span><span class='line'>    <span class="s2">&quot;coffee and donuts&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">eat</span><span class="p">(</span><span class="n">thing</span><span class="p">)</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="n">thing</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>同じようにかけてないよね&#8230;</p>
+
+<p>CoffeeScript では、eat は function の呼び出しのための () が引数を与えることで省略できるが、
+getWonderful は引数がないので () は省略できない。
+これどうしても間違えるよね。今日もコードレビューでこれを１つ訂正してあげた。</p>
+
+<p>記号の多さを見てると perl を思い出して辛い。</p>
+
+<p>underscore.js? backbone.js? jasmine? mocha? しんどい＞＜
+jquery だけはぼくの味方。</p>
+
+<p>Rails で CoffeeScript を書いてる時は、ペアプロなのに間違って Ruby で書いてても実行するまで気づかないし、大幅修正が必要になる始末。</p>
+
+<p>みんな JavaScript よりマシだからって理由で妥協してるけど、ほんとにいいの？
+node.js が一瞬でも流行った理由が納得出来ない。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/09/13/git-every-day/">日常 Git</a></h1>
     
     
@@ -125,7 +233,7 @@
 <p>foo というフィーチャーブランチから bar トピックブランチを作りたいとき。</p>
 
 <pre><code>% git fetch
-% git checkout foo/bar -b origin/foo
+% git checkout origin/foo -b foo/bar
 </code></pre>
 
 <p>ぼくは手元に remote の写しをおいておかない。つねに origin/foo のように remotes refspec から参照している。</p>
@@ -357,6 +465,10 @@ open http://tosik.github.com.dev
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/09/13/why-i-do-not-like-coffeescript/">CofeeScript 書きたくない</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/09/13/git-every-day/">日常 Git</a>

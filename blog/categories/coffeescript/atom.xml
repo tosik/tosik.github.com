@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: CoffeeScript | tosik blog]]></title>
+  <link href="http://tosik.github.com/blog/categories/coffeescript/atom.xml" rel="self"/>
+  <link href="http://tosik.github.com/"/>
+  <updated>2012-09-13T04:41:21+09:00</updated>
+  <id>http://tosik.github.com/</id>
+  <author>
+    <name><![CDATA[Toshiyuki Hirooka]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[CofeeScript 書きたくない]]></title>
+    <link href="http://tosik.github.com/blog/2012/09/13/why-i-do-not-like-coffeescript/"/>
+    <updated>2012-09-13T03:50:00+09:00</updated>
+    <id>http://tosik.github.com/blog/2012/09/13/why-i-do-not-like-coffeescript</id>
+    <content type="html"><![CDATA[<p>「Ruby と似た感じにかけるからいいよ」
+はじめはそういう謳い文句を聞いて使い始めた CoffeeScript。</p>
+
+<p>```coffeescript
+class Hope
+  doSomething: () -></p>
+
+<pre><code>@eat @getWonderful()
+</code></pre>
+
+<p>  getWonderful: () -></p>
+
+<pre><code>"coffee and donuts"
+</code></pre>
+
+<p>  eat: (thing) -></p>
+
+<pre><code>console.log thing
+</code></pre>
+
+<p>```</p>
+
+<p>```ruby
+class Hope
+  def do_something</p>
+
+<pre><code>eat wonderful
+</code></pre>
+
+<p>  end</p>
+
+<p>  def wonderful</p>
+
+<pre><code>"coffee and donuts"
+</code></pre>
+
+<p>  end</p>
+
+<p>  def eat(thing)</p>
+
+<pre><code>p thing
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>同じようにかけてないよね...</p>
+
+<p>CoffeeScript では、eat は function の呼び出しのための () が引数を与えることで省略できるが、
+getWonderful は引数がないので () は省略できない。
+これどうしても間違えるよね。今日もコードレビューでこれを１つ訂正してあげた。</p>
+
+<p>記号の多さを見てると perl を思い出して辛い。</p>
+
+<p>underscore.js? backbone.js? jasmine? mocha? しんどい＞＜
+jquery だけはぼくの味方。</p>
+
+<p>Rails で CoffeeScript を書いてる時は、ペアプロなのに間違って Ruby で書いてても実行するまで気づかないし、大幅修正が必要になる始末。</p>
+
+<p>みんな JavaScript よりマシだからって理由で妥協してるけど、ほんとにいいの？
+node.js が一瞬でも流行った理由が納得出来ない。</p>
+]]></content>
+  </entry>
+  
+</feed>
