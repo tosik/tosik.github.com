@@ -2,10 +2,10 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://tosik.github.com
+title: tosik blog
+subtitle: オンラインゲームエンジニア（気持ちはウェブっ子）
+author: Toshiyuki Hirooka
 simple_search: http://google.com/search
 description:
 
