@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[tosik blog]]></title>
+  <link href="http://tosik.github.com/atom.xml" rel="self"/>
+  <link href="http://tosik.github.com/"/>
+  <updated>2012-09-13T03:37:46+09:00</updated>
+  <id>http://tosik.github.com/</id>
+  <author>
+    <name><![CDATA[Toshiyuki Hirooka]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[日常 Git]]></title>
+    <link href="http://tosik.github.com/blog/2012/09/13/git-every-day/"/>
+    <updated>2012-09-13T03:14:00+09:00</updated>
+    <id>http://tosik.github.com/blog/2012/09/13/git-every-day</id>
+    <content type="html"><![CDATA[<p>git で普段使ってる自分の操作を紹介。</p>
+
+<h2>前提</h2>
+
+<p>remotes は origin のみ。</p>
+
+<p>いつでも最新にしておきたい fetch</p>
+
+<pre><code>% git fetch
+</code></pre>
+
+<p>これで origin の全部を取ってきてる。
+これをわかってない人がびっくりするくらい多い。</p>
+
+<h2>トピックブランチづくり</h2>
+
+<p>foo というフィーチャーブランチから bar トピックブランチを作りたいとき。</p>
+
+<pre><code>% git fetch
+% git checkout foo/bar -b origin/foo
+</code></pre>
+
+<p>ぼくは手元に remote の写しをおいておかない。つねに origin/foo のように remotes refspec から参照している。</p>
+
+<h2>なるべく早めのリベース</h2>
+
+<p>git を覚えたての人たちは</p>
+
+<pre><code>% git checkout foo
+% git pull
+% git checkout foo_bar
+% git rebase foo
+</code></pre>
+
+<p>などしてるけど、長いし怖いし foo_bar って書きたくない。</p>
+
+<p>だからぼくはいつも</p>
+
+<pre><code>% git pull --rebase origin foo
+</code></pre>
+
+<p>ってしてる。ちなみに後述するが、git up って alias にしてる。</p>
+
+<h2>release management をしてるときにもってこい</h2>
+
+<pre><code>% git shortlog origin/foo..origin/master
+</code></pre>
+
+<p>origin/master とどれくらい離れてるかを author で分類してくれるので、非常にすっきりして見やすい。</p>
+
+<p>誰が何をしてるかだいたい把握してるので、リリースマネージメントをしていた頃は重宝した。</p>
+
+<h2>過去の修正を過去に戻らず行う</h2>
+
+<p>トピックブランチが進むと過去の修正をしたくなることは多々ある。
+そういうとき、おもむろに git rebase -i HEAD~5 とかして該当箇所を edit するが、rebase 中の編集ほど怖いものはない。
+だからぼくはいつもこうしてる。</p>
+
+<p>編集中に修正が必要だと思ったらまず、コードを修正する！
+そして</p>
+
+<pre><code>% git add -p
+</code></pre>
+
+<p>で該当する修正のみ選択的にステージへ。</p>
+
+<pre><code>% git commit -m 'fugafuga'
+</code></pre>
+
+<p>と、修正したものだけのコミットを適当に作る。</p>
+
+<pre><code>% git stash
+% git rebase -i HEAD~5
+</code></pre>
+
+<p>でさかのぼって、さっきの fugafuga を修正したいコミットの直後に移動して squash にして rebase スタート！</p>
+
+<p>だいたいコンフリクトは発生しない。発生するような修正はこの手順だと修正は辛いが、コンフリクトのお陰でこの時点で気づいたりする。
+コミットメッセージの編集で fugafuga を消せば、rebase が無事終了して何事もなかったように再開できる。</p>
+
+<pre><code>% git stash pop
+</code></pre>
+
+<h2>alias</h2>
+
+<pre><code>git branch -&gt; git br
+git fetch -&gt; git fe
+git pull --rebase origin __current_branch__ -&gt; git up
+</code></pre>
+
+<p>その設定は</p>
+
+<pre><code>[alias]
+  topic = "!sh -c 'git co $1 -b $1/$2' __dummy__"
+  up = "!sh -c 'git pull --rebase origin $1' __dummy__"
+</code></pre>
+
+<p>詳細は <a href="https://github.com/tosik/dotfiles/blob/master/.gitconfig">https://github.com/tosik/dotfiles/blob/master/.gitconfig</a></p>
+
+<h2>読んでおくべき本</h2>
+
+<p><img src="http://www.oreilly.co.jp/books/images/picture978-4-87311-440-8.gif" alt="実用GIT" /></p>
+
+<p><a href="http://www.oreilly.co.jp/books/9784873114408/">http://www.oreilly.co.jp/books/9784873114408/</a></p>
+
+<p>この本を読んでおけば Refspec や git branch の仕組みなど、内部技術に近い理解が進むので、迷うことなく git が取り扱えるようになる。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress のバージョン管理]]></title>
+    <link href="http://tosik.github.com/blog/2012/09/12/versioning-octopress/"/>
+    <updated>2012-09-12T13:50:00+09:00</updated>
+    <id>http://tosik.github.com/blog/2012/09/12/versioning-octopress</id>
+    <content type="html"><![CDATA[<h2>前提</h2>
+
+<p>Octopress を正常な方法で github で使える状態にしていれば次のようになっているはず。（もちろん tosik の部分はあなたのユーザ名）</p>
+
+<pre><code>% git remote -v
+octopress       git://github.com/imathis/octopress.git (fetch)
+octopress       git://github.com/imathis/octopress.git (push)
+origin  git@github.com:tosik/tosik.github.com.git (fetch)
+origin  git@github.com:tosik/tosik.github.com.git (push)
+</code></pre>
+
+<h2>記事のソースや Gemfile をバージョン管理したい</h2>
+
+<pre><code>% git branch
+* source
+</code></pre>
+
+<p>と出るので、ローカルのブランチは Octopress により自動的に source になっている。
+なので、そのまま github へ push すればよいので</p>
+
+<pre><code>% git push origin source:source
+</code></pre>
+
+<p>もしくは単に git push で origin すなわち github に source を保存できる。
+もちろんコミットしていなければ push されないのは git ユーザならご承知なので割愛。</p>
+
+<h2>Octopress のバージョンは？</h2>
+
+<p>次のようにすれば Octopress のバージョンを自分のリポジトリに取り込める。</p>
+
+<pre><code>% git fetch
+% # octopress の tag が動いてる？
+% git merge v2.0
+</code></pre>
+
+<p>こうすれば、origin の source では Gemfile や記事のソースとは別で Octopress 自身の差分を取り込むことができる。
+エッジバージョンが使いたければ</p>
+
+<pre><code>% git merge octopress/master
+</code></pre>
+
+<p>としてしまうこともできるが要注意。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress 試してる]]></title>
+    <link href="http://tosik.github.com/blog/2012/09/12/trying-octopress/"/>
+    <updated>2012-09-12T12:46:00+09:00</updated>
+    <id>http://tosik.github.com/blog/2012/09/12/trying-octopress</id>
+    <content type="html"><![CDATA[<p>Markdown でかけるブログが欲しかった。
+はてダもはてなブログもさよなら。</p>
+
+<pre><code>curl get.pow.cx | sh
+gem install powder
+powder link
+subl source/_posts/2012-09-12-trying-octopress.markdown
+open http://tosik.github.com.dev
+</code></pre>
+
+<p>リアルタイム編集楽しい</p>
+]]></content>
+  </entry>
+  
+</feed>

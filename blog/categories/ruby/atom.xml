@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | tosik blog]]></title>
+  <link href="http://tosik.github.com/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://tosik.github.com/"/>
+  <updated>2012-09-13T03:37:46+09:00</updated>
+  <id>http://tosik.github.com/</id>
+  <author>
+    <name><![CDATA[Toshiyuki Hirooka]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress 試してる]]></title>
+    <link href="http://tosik.github.com/blog/2012/09/12/trying-octopress/"/>
+    <updated>2012-09-12T12:46:00+09:00</updated>
+    <id>http://tosik.github.com/blog/2012/09/12/trying-octopress</id>
+    <content type="html"><![CDATA[<p>Markdown でかけるブログが欲しかった。
+はてダもはてなブログもさよなら。</p>
+
+<pre><code>curl get.pow.cx | sh
+gem install powder
+powder link
+subl source/_posts/2012-09-12-trying-octopress.markdown
+open http://tosik.github.com.dev
+</code></pre>
+
+<p>リアルタイム編集楽しい</p>
+]]></content>
+  </entry>
+  
+</feed>

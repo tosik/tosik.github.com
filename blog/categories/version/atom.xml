@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: version | tosik blog]]></title>
+  <link href="http://tosik.github.com/blog/categories/version/atom.xml" rel="self"/>
+  <link href="http://tosik.github.com/"/>
+  <updated>2012-09-13T03:37:46+09:00</updated>
+  <id>http://tosik.github.com/</id>
+  <author>
+    <name><![CDATA[Toshiyuki Hirooka]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress のバージョン管理]]></title>
+    <link href="http://tosik.github.com/blog/2012/09/12/versioning-octopress/"/>
+    <updated>2012-09-12T13:50:00+09:00</updated>
+    <id>http://tosik.github.com/blog/2012/09/12/versioning-octopress</id>
+    <content type="html"><![CDATA[<h2>前提</h2>
+
+<p>Octopress を正常な方法で github で使える状態にしていれば次のようになっているはず。（もちろん tosik の部分はあなたのユーザ名）</p>
+
+<pre><code>% git remote -v
+octopress       git://github.com/imathis/octopress.git (fetch)
+octopress       git://github.com/imathis/octopress.git (push)
+origin  git@github.com:tosik/tosik.github.com.git (fetch)
+origin  git@github.com:tosik/tosik.github.com.git (push)
+</code></pre>
+
+<h2>記事のソースや Gemfile をバージョン管理したい</h2>
+
+<pre><code>% git branch
+* source
+</code></pre>
+
+<p>と出るので、ローカルのブランチは Octopress により自動的に source になっている。
+なので、そのまま github へ push すればよいので</p>
+
+<pre><code>% git push origin source:source
+</code></pre>
+
+<p>もしくは単に git push で origin すなわち github に source を保存できる。
+もちろんコミットしていなければ push されないのは git ユーザならご承知なので割愛。</p>
+
+<h2>Octopress のバージョンは？</h2>
+
+<p>次のようにすれば Octopress のバージョンを自分のリポジトリに取り込める。</p>
+
+<pre><code>% git fetch
+% # octopress の tag が動いてる？
+% git merge v2.0
+</code></pre>
+
+<p>こうすれば、origin の source では Gemfile や記事のソースとは別で Octopress 自身の差分を取り込むことができる。
+エッジバージョンが使いたければ</p>
+
+<pre><code>% git merge octopress/master
+</code></pre>
+
+<p>としてしまうこともできるが要注意。</p>
+]]></content>
+  </entry>
+  
+</feed>
