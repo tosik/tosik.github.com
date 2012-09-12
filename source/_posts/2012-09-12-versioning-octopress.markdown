@@ -21,7 +21,7 @@ Octopress を正常な方法で github で使える状態にしていれば次�
     * source
 
 と出るので、ローカルのブランチは Octopress により自動的に source になっている。
-なので、そのまま github
+なので、そのまま github へ push すればよいので
 
     % git push origin source:source
 
