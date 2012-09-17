@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: RubyMotion | tosik blog]]></title>
+  <link href="http://tosik.github.com/blog/categories/rubymotion/atom.xml" rel="self"/>
+  <link href="http://tosik.github.com/"/>
+  <updated>2012-09-18T01:52:12+09:00</updated>
+  <id>http://tosik.github.com/</id>
+  <author>
+    <name><![CDATA[Toshiyuki Hirooka]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Sublime Text 2 の RubyMotion AutoComplete を無効にする方法]]></title>
+    <link href="http://tosik.github.com/blog/2012/09/16/how-to-disable-rubymotion-autocompletion-of-sublime-text-2/"/>
+    <updated>2012-09-16T16:03:00+09:00</updated>
+    <id>http://tosik.github.com/blog/2012/09/16/how-to-disable-rubymotion-autocompletion-of-sublime-text-2</id>
+    <content type="html"><![CDATA[<p>最近、VIM から Sublime Text 2 に乗り換えた。
+ファイルの検索が早くて、これなしじゃ生きていけなくなってきてる。</p>
+
+<p>前置きはさておき</p>
+
+<h2>でしゃばりやさんの RubyMotion AutoComplete</h2>
+
+<p>Sublime Text 2 の RubyMotionSublimeCompletions という自動補完プラグインがあるのだが、
+どうも普段の Ruby を書いてる時に、この補完がでしゃばってきて仕方がない。</p>
+
+<p><img src="/images/uploaded/0e49fc87e854a527e52487118f187b87.png" alt="でしゃばった補完の例" /></p>
+
+<p>これは困った。
+Command + Shift + p で 'Set Syntax: Ruby' を実行しても改善されない。</p>
+
+<h2>お前の出る幕ではない！</h2>
+
+<p>Package Control が入った環境を用意しよう。そしてそれを使って RubyMotion Autocomplete をインストールしよう。Sublime ザムライならみんな入ってると思うけど。</p>
+
+<p>次に、RubyMotion が背中を見せた瞬間をついて Command + Shift + p で 'Package Control: Disable Package' を実行して、'RubyMotion Autocomplete' を選択する。</p>
+
+<p><img src="/images/uploaded/25d56d7f616991999be4c00a01dfc437.png" alt="不意をついた様子1" /></p>
+
+<p><img src="/images/uploaded/2d97a45a810bf12ba3c4443e7e50cae5.png" alt="不意をついた様子2" /></p>
+
+<p>この間 0.5 秒！
+パッケージを無効化してやれば、どうあがこうがでしゃばることなどできない。どうだ！</p>
+
+<p><img src="/images/uploaded/27b506a40114bace8613736a66974cc0.png" alt="どうだ、無効化されただろうの例" /></p>
+
+<p>かわいそうなので RubyMotion を書くときは有効化してあげたいので、Command + Shift + p で 'Package Control: Enable Package' を実行して、'RubyMotion Autocomplete' を選択してあげてね。</p>
+
+<h2>もっといい方法</h2>
+
+<p>あったらおしえてください。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[RubyMotion について感想]]></title>
+    <link href="http://tosik.github.com/blog/2012/09/13/about-rubymotion/"/>
+    <updated>2012-09-13T21:24:00+09:00</updated>
+    <id>http://tosik.github.com/blog/2012/09/13/about-rubymotion</id>
+    <content type="html"><![CDATA[<p>個人的な事情で RubyMotion を触り始めた。感想</p>
+
+<h2>iOS SDK が全部そのまま使える</h2>
+
+<p>iOS SDK をほとんど制約を受けずにそのまま利用可能だった。
+すなわち、UIViewController などのクラスが Ruby から利用できる。</p>
+
+<p>言い換えれば、それ以外のことはほとんどしてくれていないってこと。
+Objective-C でやっていた時と同じように使えるので、じゃあ Objective-C で書けばいいじゃんって思う人もいるだろうね。</p>
+
+<h2>Ruby でかける素晴らしさ</h2>
+
+<p>RubyMotion の重要なところは、Ruby という言語を扱えることだ。
+Ruby が今までに培った文化、思想が iOS アプリケーション開発でも利用できることは Rubyist にとって非常に
+大きな事であることは間違いない。</p>
+
+<p>ただ、残念なことがある。</p>
+
+<h2>Ruby っぽくないところは排除されていない</h2>
+
+<p>Rubyist なら以下のコードに奇妙さを覚えるだろう。</p>
+
+<pre><code>def initWithNibName(name, bundle: bundle)
+  super
+  self.navigationItem.title = 'メインビュー'
+  self.tabBarItem = UITabBarItem.alloc.initWithTabBarSystemItem(UITabBarSystemItemFavorites, tag: 1)
+end
+</code></pre>
+
+<p>これが Ruby だって！？
+Camel-Case が非常に気持ち悪い。長ったらしいメソッドが腹立たしい。</p>
+
+<p>こういうコードはいたるところに登場してしまう。
+それは、iOS SDK を Objective-C のときと同じインターフェイスでそのまま使用しているからだ。
+RubyMotion は iOS SDK を Ruby で扱えるようにしてくれてはいるが、
+iOS SDK を Ruby らしいライブラリに置き換えてくれているわけではない。</p>
+
+<p>RubyMotion を初めて使う人はその点を注意していただきたい。</p>
+
+<h2>gems の悲鳴</h2>
+
+<p>実は、RubyGems などに上がっているほとんどの gem は RubyMotion では使えない。
+まず、require が使えない。また OS に近い操作やメタプログラミングなどがかなり制限されている。
+これらの理由により、既存の gem はほぼ使えない。
+Rubyist たちがこれまで多くの知恵を絞って生み出されてきた宝石箱は RubyMotion の体質には合わないのだ。</p>
+
+<p>そのかわり、RubyMotion 用に作った gem は bundle install でうまく入れられる。</p>
+
+<h2>Ruby っぽくないところの排除を試みる gem たち</h2>
+
+<p>RubyMotion のための gem はいくつかある。
+例えば、<a href="https://github.com/fusionbox/sugarcube">sugarcube</a> は helper collection で、</p>
+
+<pre><code>self.view.addSubview(subview)
+</code></pre>
+
+<p>と書かなければならないところを</p>
+
+<pre><code>self.view &lt;&lt; subview
+</code></pre>
+
+<p>と Ruby らしく書かせてくれるなど、様々な Ruby らしさを RubyMotion に与えてくれる。
+似たようなものに <a href="https://github.com/mattetti/BubbleWrap">BubbleWrap</a> というものもある。</p>
+
+<h2>結局 iOS SDK</h2>
+
+<p>結局のところ、iOS SDK について理解する必要は排除できなかった。
+そのために知識を得るために Objective-C が読めなくてはいけなくなり、
+Objective-C で書かれたコードをどうやって Ruby に直せばよいか考えるのが面倒になるなんて皮肉は毎日存在する。</p>
+
+<p>DSL で書きたいな、なんて発想が芽生えてしまえば1日はあっという間に過ぎてしまう。
+できれば出来上がっていくスピードに驚きながら夜更かししたいものだ。</p>
+]]></content>
+  </entry>
+  
+</feed>

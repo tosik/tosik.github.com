@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Sublime Text 2 | tosik blog]]></title>
+  <link href="http://tosik.github.com/blog/categories/sublime-text-2/atom.xml" rel="self"/>
+  <link href="http://tosik.github.com/"/>
+  <updated>2012-09-18T01:52:12+09:00</updated>
+  <id>http://tosik.github.com/</id>
+  <author>
+    <name><![CDATA[Toshiyuki Hirooka]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Sublime Text 2 の RubyMotion AutoComplete を無効にする方法]]></title>
+    <link href="http://tosik.github.com/blog/2012/09/16/how-to-disable-rubymotion-autocompletion-of-sublime-text-2/"/>
+    <updated>2012-09-16T16:03:00+09:00</updated>
+    <id>http://tosik.github.com/blog/2012/09/16/how-to-disable-rubymotion-autocompletion-of-sublime-text-2</id>
+    <content type="html"><![CDATA[<p>最近、VIM から Sublime Text 2 に乗り換えた。
+ファイルの検索が早くて、これなしじゃ生きていけなくなってきてる。</p>
+
+<p>前置きはさておき</p>
+
+<h2>でしゃばりやさんの RubyMotion AutoComplete</h2>
+
+<p>Sublime Text 2 の RubyMotionSublimeCompletions という自動補完プラグインがあるのだが、
+どうも普段の Ruby を書いてる時に、この補完がでしゃばってきて仕方がない。</p>
+
+<p><img src="/images/uploaded/0e49fc87e854a527e52487118f187b87.png" alt="でしゃばった補完の例" /></p>
+
+<p>これは困った。
+Command + Shift + p で 'Set Syntax: Ruby' を実行しても改善されない。</p>
+
+<h2>お前の出る幕ではない！</h2>
+
+<p>Package Control が入った環境を用意しよう。そしてそれを使って RubyMotion Autocomplete をインストールしよう。Sublime ザムライならみんな入ってると思うけど。</p>
+
+<p>次に、RubyMotion が背中を見せた瞬間をついて Command + Shift + p で 'Package Control: Disable Package' を実行して、'RubyMotion Autocomplete' を選択する。</p>
+
+<p><img src="/images/uploaded/25d56d7f616991999be4c00a01dfc437.png" alt="不意をついた様子1" /></p>
+
+<p><img src="/images/uploaded/2d97a45a810bf12ba3c4443e7e50cae5.png" alt="不意をついた様子2" /></p>
+
+<p>この間 0.5 秒！
+パッケージを無効化してやれば、どうあがこうがでしゃばることなどできない。どうだ！</p>
+
+<p><img src="/images/uploaded/27b506a40114bace8613736a66974cc0.png" alt="どうだ、無効化されただろうの例" /></p>
+
+<p>かわいそうなので RubyMotion を書くときは有効化してあげたいので、Command + Shift + p で 'Package Control: Enable Package' を実行して、'RubyMotion Autocomplete' を選択してあげてね。</p>
+
+<h2>もっといい方法</h2>
+
+<p>あったらおしえてください。</p>
+]]></content>
+  </entry>
+  
+</feed>
