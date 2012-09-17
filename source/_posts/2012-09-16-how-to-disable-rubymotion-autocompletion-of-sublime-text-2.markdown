@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Sublime Text 2 の RubyMotion AutoCompletion を無効にする方法"
+title: "Sublime Text 2 の RubyMotion AutoComplete を無効にする方法"
 date: 2012-09-16 16:03
 comments: true
 categories: [RubyMotion, Sublime Text 2]
@@ -11,7 +11,7 @@ categories: [RubyMotion, Sublime Text 2]
 
 前置きはさておき
 
-## でしゃばりやさんの RubyMotion AutoCompletion
+## でしゃばりやさんの RubyMotion AutoComplete
 
 Sublime Text 2 の RubyMotionSublimeCompletions という自動補完プラグインがあるのだが、
 どうも普段の Ruby を書いてる時に、この補完がでしゃばってきて仕方がない。
@@ -23,9 +23,9 @@ Command + Shift + p で 'Set Syntax: Ruby' を実行しても改善されない�
 
 ## お前の出る幕ではない！
 
-Package Control が入った環境を用意しよう。そしてそれを使って RubyMotion AutoCompletion をインストールしよう。Sublime ザムライならみんな入ってると思うけど。
+Package Control が入った環境を用意しよう。そしてそれを使って RubyMotion Autocomplete をインストールしよう。Sublime ザムライならみんな入ってると思うけど。
 
-次に、RubyMotion が背中を見せた瞬間をついて Command + Shift + p で 'Package Control: Disable Package' を実行して、'RubyMotion AutoCompletion' を選択する。
+次に、RubyMotion が背中を見せた瞬間をついて Command + Shift + p で 'Package Control: Disable Package' を実行して、'RubyMotion Autocomplete' を選択する。
 
 ![不意をついた様子1](/images/uploaded/25d56d7f616991999be4c00a01dfc437.png)
 
@@ -36,7 +36,7 @@ Package Control が入った環境を用意しよう。そしてそれを使っ�
 
 ![どうだ、無効化されただろうの例](/images/uploaded/27b506a40114bace8613736a66974cc0.png)
 
-かわいそうなので RubyMotion を書くときは有効化してあげたいので、Command + Shift + p で 'Package Control: Enable Package' を実行して、'RubyMotion AutoCompletion' を選択してあげてね。
+かわいそうなので RubyMotion を書くときは有効化してあげたいので、Command + Shift + p で 'Package Control: Enable Package' を実行して、'RubyMotion Autocomplete' を選択してあげてね。
 
 
 ## もっといい方法
