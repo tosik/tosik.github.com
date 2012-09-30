@@ -1,98 +1,111 @@
 
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
-	<meta charset="utf-8">
-	<title>tosik blog</title>
-	<meta name="author" content="Toshiyuki Hirooka">
+  <meta charset="utf-8">
+  <title>tosik blog</title>
+  <meta name="author" content="Toshiyuki Hirooka">
 
-	
-	<meta name="description" content="ひとまず、RubyMotion の files_dependencies がとても面倒であるということを伝えたい。
+  
+  <meta name="description" content="ひとまず、RubyMotion の files_dependencies がとても面倒であるということを伝えたい。
 最近 Ruby でコードを書くときは大抵 ActiveSupport::Dependencies のちからを借りて、複雑な依存関係の解決をすべて任せている。 当然のことながら &hellip;">
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
 
-	<link href="/atom.xml" rel="alternate" title="tosik blog" type="application/atom+xml">
-	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://tosik.github.com/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+   <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="tosik blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-152534-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
 </head>
 
-<body>
-	<header id="header" class="inner"><h1><a href="/">tosik blog</a></h1>
-<nav id="main-nav"><ul class="main">
-	<li><a href="/">Blog</a></li>
-	<li><a href="/blog/archives">Archives</a></li>
-</ul>
-</nav>
-<nav id="mobile-nav">
-	<div class="alignleft menu">
-		<a class="button">Menu</a>
-		<div class="container"><ul class="main">
-	<li><a href="/">Blog</a></li>
-	<li><a href="/blog/archives">Archives</a></li>
-</ul>
-</div>
-	</div>
-	<div class="alignright search">
-		<a class="button"></a>
-		<div class="container">
-			<form action="http://google.com/search" method="get">
-				<input type="text" name="q" results="0">
-				<input type="hidden" name="q" value="site:tosik.github.com">
-			</form>
-		</div>
-	</div>
-</nav>
-<nav id="sub-nav" class="alignright">
-	<div class="social">
-		
-		
-		
-		<a class="twitter" href="http://twitter.com/tosik" title="Twitter">Twitter</a>
-		
-		
-		
-		
-		
-		
-		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
-		
-	</div>
-	<form class="search" action="http://google.com/search" method="get">
-		<input class="alignright" type="text" name="q" results="0">
-		<input type="hidden" name="q" value="site:tosik.github.com">
-	</form>
-</nav>
+<body   >
+  <header role="banner"><hgroup>
+</hgroup>
 
 </header>
-	
-		
-<div id="banner" class="inner">
-	<div class="container">
-		<ul class="feed"></ul>
-	</div>
-	<small><a href="http://twitter.com/tosik">tosik</a> @ <a href="http://twitter.com">Twitter</a></small>
-	<div class="loading">Loading...</div>
-</div>
-<script src="/javascripts/twitter.js"></script>
-<script type="text/javascript">
-	(function($){
-		$('#banner').getTwitterFeed('tosik', 4, false);
-	})(jQuery);
-</script>
+  <!-- <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:tosik.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
 
-	
-	<div id="content" class="inner">
+</nav> -->
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/01/rubymotion-gems-for-files-dependencies/">RubyMotion の Files_dependencies をちょっと助けてくれる Gem &#8216;Motion-dependencies&#8217;</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
-    <article class="post">
-	<h1 class="title"><a href="/blog/2012/10/01/rubymotion-gems-for-files-dependencies/">RubyMotion の Files_dependencies をちょっと助けてくれる Gem &#8216;Motion-dependencies&#8217;</a></h1>
-	<div class="entry-content">
-		<p>ひとまず、RubyMotion の files_dependencies がとても面倒であるということを伝えたい。
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-01T00:48:00+09:00" pubdate data-updated="true">2012-10-01 00:48</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>ひとまず、RubyMotion の files_dependencies がとても面倒であるということを伝えたい。
 最近 Ruby でコードを書くときは大抵 ActiveSupport::Dependencies のちからを借りて、複雑な依存関係の解決をすべて任せている。</p>
 
 <p>当然のことながら RubyMotion ではこの恩恵はいただくことができない。全く残念である。</p>
@@ -133,14 +146,23 @@
 <h1>ひとまずこれで</h1>
 
 <p>今作ってるアプリはこれを使っていこうと思う。</p>
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/16/how-to-disable-rubymotion-autocompletion-of-sublime-text-2/">Sublime Text 2 の RubyMotion AutoComplete を無効にする方法</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -152,22 +174,14 @@
   
 
 
-<time datetime="2012-10-01T00:48:00+09:00" pubdate data-updated="true">2012-10-01 00:48</time></div>
-	<div class="tags">
+<time datetime="2012-09-16T16:03:00+09:00" pubdate data-updated="true">2012-09-16 16:03</time>
+        
+      </p>
+    
+  </header>
 
 
-	<a class='category' href='/blog/categories/ruby/'>Ruby</a>, <a class='category' href='/blog/categories/rubymotion/'>RubyMotion</a>
-
-
-</div>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2012/09/16/how-to-disable-rubymotion-autocompletion-of-sublime-text-2/">Sublime Text 2 の RubyMotion AutoComplete を無効にする方法</a></h1>
-	<div class="entry-content">
-		<p>最近、VIM から Sublime Text 2 に乗り換えた。
+  <div class="entry-content"><p>最近、VIM から Sublime Text 2 に乗り換えた。
 ファイルの検索が早くて、これなしじゃ生きていけなくなってきてる。</p>
 
 <p>前置きはさておき</p>
@@ -202,14 +216,23 @@ Command + Shift + p で &#8216;Set Syntax: Ruby&#8217; を実行しても改善�
 <h2>もっといい方法</h2>
 
 <p>あったらおしえてください。</p>
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/13/about-rubymotion/">RubyMotion について感想</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -221,22 +244,14 @@ Command + Shift + p で &#8216;Set Syntax: Ruby&#8217; を実行しても改善�
   
 
 
-<time datetime="2012-09-16T16:03:00+09:00" pubdate data-updated="true">2012-09-16 16:03</time></div>
-	<div class="tags">
+<time datetime="2012-09-13T21:24:00+09:00" pubdate data-updated="true">2012-09-13 21:24</time>
+        
+      </p>
+    
+  </header>
 
 
-	<a class='category' href='/blog/categories/rubymotion/'>RubyMotion</a>, <a class='category' href='/blog/categories/sublime-text-2/'>Sublime Text 2</a>
-
-
-</div>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2012/09/13/about-rubymotion/">RubyMotion について感想</a></h1>
-	<div class="entry-content">
-		<p>個人的な事情で RubyMotion を触り始めた。感想</p>
+  <div class="entry-content"><p>個人的な事情で RubyMotion を触り始めた。感想</p>
 
 <h2>iOS SDK が全部そのまま使える</h2>
 
@@ -308,14 +323,23 @@ Objective-C で書かれたコードをどうやって Ruby に直せばよい�
 
 <p>DSL で書きたいな、なんて発想が芽生えてしまえば1日はあっという間に過ぎてしまう。
 できれば出来上がっていくスピードに驚きながら夜更かししたいものだ。</p>
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/13/git-every-day/">日常 Git</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -327,22 +351,14 @@ Objective-C で書かれたコードをどうやって Ruby に直せばよい�
   
 
 
-<time datetime="2012-09-13T21:24:00+09:00" pubdate data-updated="true">2012-09-13 21:24</time></div>
-	<div class="tags">
+<time datetime="2012-09-13T03:14:00+09:00" pubdate data-updated="true">2012-09-13 03:14</time>
+        
+      </p>
+    
+  </header>
 
 
-	<a class='category' href='/blog/categories/ruby/'>Ruby</a>, <a class='category' href='/blog/categories/rubymotion/'>RubyMotion</a>
-
-
-</div>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2012/09/13/git-every-day/">日常 Git</a></h1>
-	<div class="entry-content">
-		<p>git で普段使ってる自分の操作を紹介。</p>
+  <div class="entry-content"><p>git で普段使ってる自分の操作を紹介。</p>
 
 <h2>前提</h2>
 
@@ -448,14 +464,23 @@ git pull --rebase origin __current_branch__ -&gt; git up
 <p><a href="http://www.oreilly.co.jp/books/9784873114408/">http://www.oreilly.co.jp/books/9784873114408/</a></p>
 
 <p>この本を読んでおけば Refspec や git branch の仕組みなど、内部技術に近い理解が進むので、迷うことなく git が取り扱えるようになる。</p>
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/12/versioning-octopress/">Octopress のバージョン管理</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -467,22 +492,14 @@ git pull --rebase origin __current_branch__ -&gt; git up
   
 
 
-<time datetime="2012-09-13T03:14:00+09:00" pubdate data-updated="true">2012-09-13 03:14</time></div>
-	<div class="tags">
+<time datetime="2012-09-12T13:50:00+09:00" pubdate data-updated="true">2012-09-12 13:50</time>
+        
+      </p>
+    
+  </header>
 
 
-	<a class='category' href='/blog/categories/git/'>git</a>
-
-
-</div>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2012/09/12/versioning-octopress/">Octopress のバージョン管理</a></h1>
-	<div class="entry-content">
-		<h2>前提</h2>
+  <div class="entry-content"><h2>前提</h2>
 
 <p>Octopress を正常な方法で github で使える状態にしていれば次のようになっているはず。（もちろん tosik の部分はあなたのユーザ名）</p>
 
@@ -524,14 +541,23 @@ origin  git@github.com:tosik/tosik.github.com.git (push)
 </code></pre>
 
 <p>としてしまうこともできるが要注意。</p>
+</div>
+  
+  
 
-		
-		
-	</div>
 
-
-<div class="meta">
-	<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/12/trying-octopress/">Octopress 試してる</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -543,22 +569,14 @@ origin  git@github.com:tosik/tosik.github.com.git (push)
   
 
 
-<time datetime="2012-09-12T13:50:00+09:00" pubdate data-updated="true">2012-09-12 13:50</time></div>
-	<div class="tags">
+<time datetime="2012-09-12T12:46:00+09:00" pubdate data-updated="true">2012-09-12 12:46</time>
+        
+      </p>
+    
+  </header>
 
 
-	<a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/version/'>version</a>
-
-
-</div>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2012/09/12/trying-octopress/">Octopress 試してる</a></h1>
-	<div class="entry-content">
-		<p>Markdown でかけるブログが欲しかった。
+  <div class="entry-content"><p>Markdown でかけるブログが欲しかった。
 はてダもはてなブログもさよなら。</p>
 
 <pre><code>curl get.pow.cx | sh
@@ -569,68 +587,112 @@ open http://tosik.github.com.dev
 </code></pre>
 
 <p>リアルタイム編集楽しい</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
+</div>
+  
+  
 
 
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    
+<section>
+  <img src="http://gravatar.com/avatar/0eabb3969b7a892a21395d0fdab705b7" alt="Gravatar image" title="Gravatar Image" />
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/10/01/rubymotion-gems-for-files-dependencies/">RubyMotion の files_dependencies をちょっと助けてくれる gem &#8216;motion-dependencies&#8217;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/16/how-to-disable-rubymotion-autocompletion-of-sublime-text-2/">Sublime Text 2 の RubyMotion AutoComplete を無効にする方法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/13/about-rubymotion/">RubyMotion について感想</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/13/git-every-day/">日常 Git</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/12/versioning-octopress/">Octopress のバージョン管理</a>
+      </li>
+    
+  </ul>
+</section>
 
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("tosik", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/tosik" class="twitter-follow-button" data-show-count="false">Follow @tosik</a>
+  
+</section>
 
 
 
 
 
   
+</aside>
 
-
-<time datetime="2012-09-12T12:46:00+09:00" pubdate data-updated="true">2012-09-12 12:46</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
-
-
-</div>
-	
-</div></article>
-
-<nav id="pagenavi">
-    
-    
-    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav></div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
-
-    Toshiyuki Hirooka
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Toshiyuki Hirooka -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
 
 </footer>
-	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-	$('.fancybox').fancybox();
-})(jQuery);
-</script> <!-- Delete or comment this line to disable Fancybox -->
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 
 
-	<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-152534-6']);
-		_gaq.push(['_trackPageview']);
 
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
 
 
 
