@@ -35,7 +35,7 @@ README を見てもちょっとわかりにくいのだが、ソースコード�
 ```
 
 という結果が得られる。
-なので、これを Rakefile に書いてある app.file_dependencies に突っ込めばよい。
+なので、これを Rakefile に書いてあるように app.file_dependencies に突っ込めばよい。
 詳細は README を！
 
 # ひとまずこれで
