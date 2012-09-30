@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | tosik blog]]></title>
   <link href="http://tosik.github.com/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://tosik.github.com/"/>
-  <updated>2012-10-01T01:15:26+09:00</updated>
+  <updated>2012-10-01T01:22:05+09:00</updated>
   <id>http://tosik.github.com/</id>
   <author>
     <name><![CDATA[Toshiyuki Hirooka]]></name>
@@ -53,7 +53,7 @@ end
 <p>```</p>
 
 <p>という結果が得られる。
-なので、これを Rakefile に書いてある app.file_dependencies に突っ込めばよい。
+なので、これを Rakefile に書いてあるように app.file_dependencies に突っ込めばよい。
 詳細は README を！</p>
 
 <h1>ひとまずこれで</h1>
