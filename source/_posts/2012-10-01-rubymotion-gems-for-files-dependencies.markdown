@@ -15,7 +15,7 @@ categories: [RubyMotion, Ruby]
 
 ちょっとでも RubyMotion でコンパイルされるファイルの依存関係を指定できないだろうかと探していたらこんなものが。
 
-[motion-dependencie](https://github.com/fleitz/motion-dependencies)
+[motion-dependencies](https://github.com/fleitz/motion-dependencies)
 
 README を見てもちょっとわかりにくいのだが、ソースコード中に '# depends path/to/code.rb' のようなコメントを書けば、
 そのソースコードファイルは 'path/to/code.rb' に依存している、ということを指定できるというものだ。
