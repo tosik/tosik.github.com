@@ -7,8 +7,8 @@
 	<meta name="author" content="Toshiyuki Hirooka">
 
 	
-	<meta name="description" content="最近、VIM から Sublime Text 2 に乗り換えた。
-ファイルの検索が早くて、これなしじゃ生きていけなくなってきてる。 前置きはさておき でしゃばりやさんの RubyMotion AutoComplete Sublime Text 2 の &hellip;">
+	<meta name="description" content="ひとまず、RubyMotion の files_dependencies がとても面倒であるということを伝えたい。
+最近 Ruby でコードを書くときは大抵 ActiveSupport::Dependencies のちからを借りて、複雑な依存関係の解決をすべて任せている。 当然のことながら &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -87,6 +87,81 @@
 
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/10/01/rubymotion-gems-for-files-dependencies/">RubyMotion の Files_dependencies をちょっと助けてくれる Gem &#8216;Motion-dependencies&#8217;</a></h1>
+	<div class="entry-content">
+		<p>ひとまず、RubyMotion の files_dependencies がとても面倒であるということを伝えたい。
+最近 Ruby でコードを書くときは大抵 ActiveSupport::Dependencies のちからを借りて、複雑な依存関係の解決をすべて任せている。</p>
+
+<p>当然のことながら RubyMotion ではこの恩恵はいただくことができない。全く残念である。</p>
+
+<h1>motion-dependencies</h1>
+
+<p>ちょっとでも RubyMotion でコンパイルされるファイルの依存関係を指定できないだろうかと探していたらこんなものが。</p>
+
+<p><a href="https://github.com/fleitz/motion-dependencies">motion-dependencie</a></p>
+
+<p>README を見てもちょっとわかりにくいのだが、ソースコード中に &#8216;# depends path/to/code.rb&#8217; のようなコメントを書けば、
+そのソースコードファイルは &#8216;path/to/code.rb&#8217; に依存している、ということを指定できるというものだ。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># depends your-mixin.rb</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">FooViewController</span> <span class="o">&lt;</span> <span class="no">UIViewController</span>
+</span><span class='line'>  <span class="kp">include</span> <span class="no">YourMixin</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>こうすることで、</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Motion</span><span class="o">::</span><span class="no">Dependencies</span><span class="o">.</span><span class="n">find_dependencies</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">files</span><span class="p">)</span>
+</span><span class='line'><span class="c1"># =&gt; {&quot;./foo_view_controller.rb&quot; =&gt; [&quot;./your-mixin.rb&quot;]}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>という結果が得られる。
+なので、これを Rakefile に書いてある app.file_dependencies に突っ込めばよい。
+詳細は README を！</p>
+
+<h1>ひとまずこれで</h1>
+
+<p>今作ってるアプリはこれを使っていこうと思う。</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-01T00:48:00+09:00" pubdate data-updated="true">2012-10-01 00:48</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/ruby/'>Ruby</a>, <a class='category' href='/blog/categories/rubymotion/'>RubyMotion</a>
+
+
+</div>
+	
+</div></article>
 
 
     <article class="post">
