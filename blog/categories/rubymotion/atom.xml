@@ -4,7 +4,7 @@
   <title><![CDATA[Category: RubyMotion | tosik blog]]></title>
   <link href="http://tosik.github.com/blog/categories/rubymotion/atom.xml" rel="self"/>
   <link href="http://tosik.github.com/"/>
-  <updated>2012-10-01T01:22:05+09:00</updated>
+  <updated>2012-10-01T01:23:31+09:00</updated>
   <id>http://tosik.github.com/</id>
   <author>
     <name><![CDATA[Toshiyuki Hirooka]]></name>
@@ -27,7 +27,7 @@
 
 <p>ちょっとでも RubyMotion でコンパイルされるファイルの依存関係を指定できないだろうかと探していたらこんなものが。</p>
 
-<p><a href="https://github.com/fleitz/motion-dependencies">motion-dependencie</a></p>
+<p><a href="https://github.com/fleitz/motion-dependencies">motion-dependencies</a></p>
 
 <p>README を見てもちょっとわかりにくいのだが、ソースコード中に '# depends path/to/code.rb' のようなコメントを書けば、
 そのソースコードファイルは 'path/to/code.rb' に依存している、ということを指定できるというものだ。</p>
